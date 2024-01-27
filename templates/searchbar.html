@@ -1,0 +1,10 @@
+{% macro searchbar(width, margin) %}
+
+<form method="POST" action="{{ url_for('index') }}#top-table" class='autocomplete input-group input-group-md {{width}} {{margin}}' autocomplete="off">
+    <input name="user_input" type="text"class="myInput form-control rounded-0" placeholder="Enter Your Favourite Restaurant" aria-label="Recipient's username" aria-describedby="basic-addon2">
+    <div class="input-group-append">
+      <button class="submit-btn btn btn-success rounded-0">Search</button>
+    </div>
+</form>
+
+{% endmacro %}

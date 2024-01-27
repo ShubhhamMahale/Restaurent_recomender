@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<!-- top30  page header -->
+<header class="recommend-section">
+    <div class="overlay" style="height: 100%;">
+        
+        <h1 class="mx-5 text-light display-1" style="font-family: 'Lobster', cursive;">The Top 30 Restaurants</h1>
+    </div>
+</header>
+
+<!-- restaurant cards -->
+<div class="px-4 py-4" style="background-image: linear-gradient(to bottom right, #4AA96C, #9FE6A0, #4AA96C);">
+    <div class="container-fluid px-5">
+        <section class="my-5 d-flex gap-5 flex-wrap justify-content-around mx-5" style="max-width: 100%;">
+
+            {% for rest in top_rests %}
+            <div class="card" style="max-width: 30%">
+                <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+                    <img src="https://mdbootstrap.com/img/Photos/Horizontal/Food/8-col/img (5).jpg" class="img-fluid rounded" />
+                    <a href="#!">
+                        <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+                    </a>
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title font-weight-bold" ><a>{{ rest['name']|truncate(30,True,'...') }}</a></h5>
+                    <ul class="list-unstyled list-inline mb-0">
+                        {% for star in range(3) %}
+                        <li class="list-inline-item me-0">
+                            <i class="fa-solid fa-star text-warning fa-xs"> </i>
+                        </li>
+                        {% endfor %}
+                        <li class="list-inline-item me-0">
+                            <i class="fa-regular fa-star-half-stroke text-warning fa-xs"></i>
+                        </li>
+                        <li class="list-inline-item me-0">
+                            <i class="fa-regular fa-star text-warning fa-xs"></i>
+                        </li>
+                        <li class="list-inline-item mb-0">
+                            <p class="text-muted">{{ rest['Mean Rating']}} ({{ rest['votes'] }})</p>
+                        </li>
+                    </ul>
+                    <p class="mb-0 text-muted">{{ rest['rest_type'] }}</p>
+                    <a href="#!" class="btn btn-md btn-dark w-100 mt-2">View More</a>
+                </div>
+            </div>
+          {% endfor %}
+          
+        </section>
+    </div>
+</div>
+
+
+{% endblock %}

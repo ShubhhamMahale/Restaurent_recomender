@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+
+{% from 'searchbar.html' import searchbar %}
+
+{% block content %}
+
+<!-- Header section -->
+<header class="header">
+    <div class="overlay text-white" style="height: 90vh;">
+        <h1 class="display-1 main-title">Fav-Rest</h1>
+        <!-- <h2 class=" display-6 lead">Always fresh &amp; Delightful</h2> -->
+        <h2 class=" display-6 lead">Treat Yourself with Delight and Leisure</h2>
+        {{searchbar('w-25', 'm-5')}}
+    </div>
+</header>
+
+<!-- about top30 -->
+<div id="top30" class="container-fluid fill d-flex flex-column">
+    <div class="row flex-grow-1">
+        <div class="col-6 bg-success bg-gradient d-flex flex-column justify-content-center align-items-center">
+            <p class="fs-3 text-light mx-5 text-justify lh-lg fw-light">Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi reiciendis qui alias amet reprehenderit minus illum porro doloremque sapiente, laboriosam quae ex ea officia vitae consequuntur sequi ipsa error in.</p>
+            <a type="button" class="btn btn-lg btn-dark mt-5 py-2 px-4" href="{{ url_for('recommend') }}">View Restaurants</a>
+        </div>
+        <div class="col-6 bg-light d-flex align-items-center">
+            <img class="top30-img" src="../static/imgs/gallary-6.jpg">
+        </div>
+    </div>
+</div>
+
+<!-- similar restaurants -->
+<div id="search" class="container-fluid px-5 pb-5" style="background-color: #9FE6A0;" id="top30">
+    <div  class="row justify-content-center mx-5">
+        <div id="top-table" class="col-12 px-5 my-4"></div>
+        {{searchbar('w-50', 'm-2')}}
+        <h2 class="mb-5 fw-light mt-5 text-center" style="font-family: 'Lobster Two', cursive; color: #564A4A">Restaurants You May Like ...</h2>
+    <table  class="table border-dark table-hover mb-5">
+        <thead class="h5 table-dark">
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Restaurant</th>
+                <th scope="col">Cuisines</th>
+                <th scope="col">Rating</th>
+                <th scope="col">Price</th>
+            </tr>
+        </thead>
+        <tbody class="table-success">
+            {% for rest in rec_rest %}
+            <tr>
+                <th scope='row'>{{ loop.index }}</th>
+                <td>{{ rest['name'] }}</td>
+                <td>{{ rest['cuisines'] }}</td>
+                <td>{{ rest['Mean Rating'] }}</td>
+                <td>{{ rest['cost'] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+        </table>    
+    </div>
+</div>
+
+
+
+{% endblock %}
+

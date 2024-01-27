@@ -1,2 +1,2 @@
-# Restaurent_recomender
- A restaurant recommender web application using content based filtering.
+# rest_recommend
+ An restaurant Recommender web application using content based filtering.

@@ -1,0 +1,173 @@
+html{
+  scroll-behavior: smooth;
+}
+
+
+.overlay{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* height: 90vh; */
+    background: rgba(33, 37, 41, 0.7);
+}
+
+.fill{
+    height: 100vh;
+}
+
+.fill-50{
+  height: 50vh;
+}
+
+.header{
+    background: url(../imgs/main.png) no-repeat center center fixed;
+    background-size: cover;
+}
+
+/* Modify brand and text color */
+.navbar-custom .navbar-brand{
+    font-family: 'Pacifico', cursive;
+    color: #4AA96C;
+    cursor: default;
+}
+
+.main-title{
+  font-family: 'Pacifico', cursive;
+  /* font-family: 'Lobster Two', cursive; */
+}
+
+.navbar-custom .navbar-brand:hover{
+    color: #4AA96C;
+}
+
+.nav-item .nav-link{
+    color: whitesmoke;
+}
+
+.nav-item .nav-link:hover{
+  color: #a0e2a1;
+}
+
+.gallary {
+    margin: 0;
+  }
+  
+  .gallary .gallary-item {
+    padding: 0;
+    border: 1px solid #343a40;
+  }
+  
+  .gallary .gallary-item .gallary-img {
+    width: 100%;
+  }
+  
+  .gallary .gallary-item .gallary-overlay {
+    background: rgba(52, 58, 64, 0.7);
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: -webkit-flex;
+    display: -ms-flex;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    visibility: hidden;
+    opacity: 0;
+    -webkit-transition: all 0.2s linear 0s;
+    transition: all 0.2s linear 0s;
+  }
+  
+  .gallary .gallary-item .gallary-overlay .gallary-icon {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #fff;
+  }
+  
+  .gallary .gallary-item:hover .gallary-overlay {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  .middle-items {
+    display: -webkit-flex;
+    display: -ms-flex;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+
+  .top30-img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%;
+  }
+  
+.recommend-section{
+  height: 60vh;
+  background: url('../imgs/book-table-img.jpg') no-repeat center center;
+  background-size: cover;
+}
+
+/* seacrh bar autocomplete */
+
+input {
+  border: 1px solid transparent;
+  background-color: #f1f1f1;
+  padding: 10px;
+  font-size: 16px;
+}
+input[type=text] {
+  background-color: #f1f1f1;
+  width: 100%;
+}
+input[type=submit] {
+  background-color: DodgerBlue;
+  color: #fff;
+}
+.autocomplete-items {
+  position: absolute;
+  border: 1px solid #d4d4d4;
+  border-bottom: none;
+  border-top: none;
+  z-index: 99;
+  /*position the autocomplete items to be the same width as the container:*/
+  top: 100%;
+  left: 0;
+  right: 0;
+}
+.autocomplete-items div {
+  padding: 10px;
+  cursor: pointer;
+  background-color: #fff;
+  border-bottom: 1px solid #d4d4d4;
+}
+.autocomplete-items div:hover {
+  /*when hovering an item:*/
+  background-color: #e9e9e9;
+}
+.autocomplete-active {
+  /*when navigating through the items using the arrow keys:*/
+  background-color: DodgerBlue !important;
+  color: #ffffff;
+}
